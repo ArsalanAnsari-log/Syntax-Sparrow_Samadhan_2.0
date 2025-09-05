@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>{{ user.username }}'s Profile</h2>
+  <p>{{ user.bio }}</p>
+
+  <h3>Posts</h3>
+  {% for post in user.posts %}
+    {% include 'post_card.html' %}
+  {% else %}
+    <p>No posts yet.</p>
+  {% endfor %}
+{% endblock %}

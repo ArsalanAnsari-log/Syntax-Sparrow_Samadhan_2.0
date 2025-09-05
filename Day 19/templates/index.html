@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Feed</h1>
+  {% for post in posts %}
+    {% include 'post_card.html' %}
+  {% else %}
+    <p>No posts yet. <a href="{{ url_for('create_post') }}">Create one</a>!</p>
+  {% endfor %}
+{% endblock %}
